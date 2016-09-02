@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--EUC-KR-->
+<title>GDMS-사무장시스템</title>
+ 
+<link rel="stylesheet" href="http://52.203.35.99/ERP/m/comm/jquery_m/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="http://52.203.35.99/ERP/m/comm/css/comm.css">
+<script src="http://52.203.35.99/ERP/m/comm/jquery/jquery.js"></script>
+<script src="http://52.203.35.99/ERP/m/comm/jquery_m/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+
+<section id="page1" data-role="page">
+    <div style="overflow: hidden;"  data-role="header" data-position="fixed" data-fullscreen="false">
+    	<h1>메인</h1>
+    	<a class="ui-btn-right" href="#menuPanel" data-icon="gear" data-iconpos="notext">Options</a>
+	    
+    </div>                   
+    <div class="content" data-role="content">
+         <!-- <p><a href="#page2" class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="dialog">modal page2</a></p> -->
+         <a href="./_page/report_day.html" data-prefetch="true" data-transition="slide"><!--data-ajax="true"-->일일보고서</a>
+         <a href="./_page/report_month.html" data-prefetch="true" data-transition="slide"><!--data-ajax="true"-->월간보고서</a>
+    </div>
+
+
+
+
+
+
+
+
+     <footer data-role="footer"  data-position="fixed" data-fullscreen="false"><h1>미리내마을</h1></footer>
+     
+	
+		<div data-role="panel" id="menuPanel" data-position="right" data-display="overlay" data-theme="a">
+	       <h3> 설정메뉴 </h3>
+	       <ul data-role="listview">
+	           <li data-icon="power">
+	                 <a href="">로그아웃</a>
+	           </li>
+	           <li>
+	                <a href="">회원설정</a>
+	           </li>
+	           <li>
+	                <a href="">보안설정</a>
+	           </l>
+	           <li>
+	                <a href="">환경설정</a>
+	           </li>
+	           <li>
+	                <a href="o">국가설정</a>
+	           </li>
+	        </ul>
+		</div>
+	
+	
+	
+</section>
+</body>
+</html>
+
+
+
+<div data-role="panel" id="listPanel" data-position="left" data-display="overlay" data-theme="a">
+       <h3> 일일보고서 리스트 </h3>
+       <div data-role="collapsibleset" data-inset="false">
+		            <!-- <div data-role="collapsible"> 아코디언 사용시-->
+				        <!-- <h3>가나다 List</h3> -->
+				        <ul data-role="listview" data-filter="true" >
+				            <li data-role="list-divider">일일보고서</li>
+					            <li><a href="#">가나다</a></li>
+					            <li><a href="#">라마바</a></li>
+					            <li><a href="#">아야어여</a>
+					            </li>
+					            <li><a href="#">오요우유</a></li>
+				             <li data-role="list-divider">월간보고서</li>
+					            <li>
+									            <a href="#">
+				                    <img src="http://api.jquerymobile.com/resources/listview/images/album-hc.jpg">
+				                    <h2>Broken Bells</h2>
+				                    <p>The framework will scale the image to 80 pixels square</p>
+				                </a>
+								
+								</li>
+					            <li><a href="#">라마바</a></li>
+					            <li><a href="#">아야어여</a>
+					            </li>
+					            <li><a href="#">오요우유</a></li>
+				        </ul>
+				  	<!-- </div> -->
+			  </div>
+	</div>
+	
+	
+
+
+
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
+
+<body>
+    <div class="app">
+        <h1>PhoneGap</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

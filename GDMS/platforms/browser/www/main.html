@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--EUC-KR-->
+<title>GDMS-사무장시스템</title>
+<link rel="stylesheet" href="./comm/jquery_m/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="./comm/css/comm.css">
+<script src="./comm/jquery/jquery.js"></script>
+<script src="./comm/jquery/js.cookie.js"></script>
+<script src="./comm/js/comm.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	if($.cookie('id')!='test'){
+		alert('잘못된 접근입니다.');
+		document.location.href="./index.html"
+	}
+});
+</script>
+<script src="./comm/jquery_m/jquery.mobile-1.4.5.js"></script>
+
+
+</head>
+<body> 
+
+
+<section id="page1" data-role="page">
+    <div style="overflow: hidden;"  data-role="header" data-position="fixed" data-fullscreen="false">
+    	<h1>메인</h1>
+    	<a class="ui-btn-right" href="#menuPanel" data-icon="gear" data-iconpos="notext">Options</a>
+	    
+    </div>                   
+    <div class="content" data-role="content">
+         <!-- <p><a href="#page2" class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="dialog">modal page2</a></p> -->
+         <a href="./_page/report_day.html"  data-transition="slide"><!--data-prefetch="true" data-ajax="true"-->일일보고서</a>
+         <a href="./_page/report_month.html"  data-transition="slide"><!--data-ajax="true"-->월간보고서</a>
+         <a href="./_page/sale.html" data-prefetch="true" data-transition="slide"><!--data-ajax="true"-->판매현황서</a>
+         <a href="./_page/stay.html" data-prefetch="true" data-transition="slide"><!--data-ajax="true"-->숙박현황서</a>
+         <a href="./_page/experience.html" data-prefetch="true" data-transition="slide"><!--data-ajax="true"-->체험현황서</a>
+         <a href="./_page/experience.html" data-prefetch="true" data-transition="slide"><!--data-ajax="true"-->공문서</a>
+    </div>
+
+
+
+
+
+
+
+
+     <footer data-role="footer"  data-position="fixed" data-fullscreen="false"><h1>미리내마을</h1></footer>
+     
+	
+	<div data-role="panel" id="menuPanel" data-position="right" data-display="overlay" data-theme="a">
+       <h3> 설정메뉴 </h3>
+        <a href="#member_set" data-role="popup">회원설정</a>
+       <ul data-role="listview">
+           <li data-icon="power">
+                 <a href='#' onclick='set.logout()'>로그아웃</a>
+           </li>
+           <li data-icon="action">
+                <a href="#member_set" data-rel="dialog">회원설정</a>
+           </li>
+           <li data-icon="action">
+                 <a href="#security_set" data-rel="dialog">보안설정</a>
+           </l>
+           <li data-icon="action">
+                 <a href="#system_set" data-rel="dialog">환경설정</a>
+           </li>
+           <li data-icon="action">
+                 <a href="#nation_set" data-rel="dialog">국가설정</a>
+           </li>
+        </ul>
+	</div>
+</section>
+
+<section id="member_set" data-role="page">
+    <header data-role="header" data-add-back-btn="true"><h1>회원설정</h1></header>
+    <div class="content" data-role="content">
+        <table class='tbl-format tbl-format-none' style="border:none;">
+			<colgroup>
+				<col /><!--75px-->
+				<col /><!--240px-->
+				<col />
+				<col />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td style='width:15%'>설정</th>
+					<td style='width:35%' colspan=3><input type="text" class="input-text-doc" value="" ></td>
+				</tr>
+				<tr>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="back">취소</a></th>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="submit">적용</a></td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</section>
+
+<section id="security_set" data-role="page">
+    <header data-role="header" data-add-back-btn="true"><h1>보안설정</h1></header>
+    <div class="content" data-role="content">
+        <table class='tbl-format tbl-format-none' style="border:none;">
+			<colgroup>
+				<col /><!--75px-->
+				<col /><!--240px-->
+				<col />
+				<col />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td style='width:15%'>설정</th>
+					<td style='width:35%' colspan=3><input type="text" class="input-text-doc" value="" ></td>
+				</tr>
+				<tr>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="back">취소</a></th>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="submit">적용</a></td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</section>
+
+
+<section id="system_set" data-role="page">
+    <header data-role="header" data-add-back-btn="true"><h1>환경설정</h1></header>
+    <div class="content" data-role="content">
+        <table class='tbl-format tbl-format-none' style="border:none;">
+			<colgroup>
+				<col /><!--75px-->
+				<col /><!--240px-->
+				<col />
+				<col />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td style='width:15%'>설정</th>
+					<td style='width:35%' colspan=3><input type="text" class="input-text-doc" value="" ></td>
+				</tr>
+				<tr>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="back">취소</a></th>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="submit">적용</a></td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</section>
+
+<section id="nation_set" data-role="page">
+    <header data-role="header" data-add-back-btn="true"><h1>국가설정</h1></header>
+    <div class="content" data-role="content">
+        <table class='tbl-format tbl-format-none' style="border:none;">
+			<colgroup>
+				<col /><!--75px-->
+				<col /><!--240px-->
+				<col />
+				<col />
+			</colgroup>
+			<tbody>
+				<tr>
+					<td style='width:15%'>설정</th>
+					<td style='width:35%' colspan=3><input type="text" class="input-text-doc" value="" ></td>
+				</tr>
+				<tr>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="back">취소</a></th>
+					<td style='width:50%' colspan=2><a class="ui-shadow ui-btn ui-corner-all ui-mini" data-rel="submit">적용</a></td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</section>
+
+</body>
+</html>
