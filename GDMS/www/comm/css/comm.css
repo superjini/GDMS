@@ -1,0 +1,126 @@
+.content-page-wrap{/*중간 content page*/
+	text-align:center;
+	clear:both;
+	/*overflow-y:auto;*/
+	height:100%;
+	border:1px solid #ffffff;
+	width:100%;
+}
+.content-page-wrap-bottom{/*content-page-top height에서 +5*/
+	height:35px; width:100%;
+	border:1px solid white;
+}
+
+.tbl-format{
+	font-size:12px;
+	color:#000;
+	border-left:1px solid #000;
+	border-top:1px solid #000;
+	border-collapse:collapse;
+	padding:0;
+	border-spacing:0;
+	table-layout:fixed;
+	width:100%;
+}
+.tbl-format th,.tbl-format td{
+	text-align:center; 
+	border-right:1px solid #000; 
+	border-bottom:1px solid #000; 
+	word-wrap:break-word;
+}
+.tbl-format td{
+	background-color:#FFFFFF;
+}
+
+.tbl-format th{
+	background-color:#EAEAEA;
+	font-weight:bold;
+	padding:3px 0px 2px 0px;
+}
+.tbl-format td{
+	text-align:left;
+}
+
+.tbl-format-none,.tbl-format-none td,.tbl-format-none th{border:none;}
+/*양식 title*/
+.format-title{
+	display:inline-block; 
+	width:100%; /*280*/
+	height:80px;
+	margin-top:10px;
+	vertical-align:top;
+	text-align:center;
+}
+.format-title span{
+	display:inline-block;
+	font-size:30px;
+	margin-top:18px;
+	border-bottom:1px solid #000000;
+}
+
+/*문서 스타일*/
+.option-wrap{
+	display:inline-block;
+	width:100%;
+	max-width:650px;
+}
+.option{
+	display:inline-block;
+	vertical-align:top;
+	margin-bottom:5px;
+}
+
+.content-page-top{
+	width:100%;
+	height:30px;
+	border-bottom:1px dashed #545f60;
+	background-color:#FFFFFF;
+	text-align:center;
+}
+
+.content-page-top .menu{
+	float:right;
+	margin:2px 7px 0 0;
+	display:inline-block;
+}
+.content-page-top .menu > li{
+	float:left;
+	margin-right:5px;
+}
+
+.content-page-top .menu > .button{/*버튼의 경우 margin을 줘서 수평정리*/
+	margin-top:2px;
+}
+/*양식별 결재박스 스타일*/
+.approval-box-wrap{display:<?php echo $rows['data']['approval']=='y'?'inline-block':'none';?>;}
+.format-title{width:<?php echo $rows['data']['approval']=='y'?'280':'650';?>px;}
+/**
+ * 	문서안에 input text
+ */
+.input-text-doc{
+	margin:0;
+	margin-left:3px;
+	padding:5px;
+	height:12px;
+	width:90%;
+	border:0px solid #FFFFFF;
+}
+.input-text-doc:disabled{
+	background:#FFFFFF;
+	color:#000000;
+	cursor:not-allowed;
+}
+.input-text-doc:focus{
+	border:0px solid #FFFFFF;
+}
+.input-textarea-doc{
+	clear:both;
+	height:100%;
+	width:100%;
+	padding:5px;
+	resize:none;
+	border:none;
+	box-sizing:border-box;
+	border:1px solid red;
+	
+}

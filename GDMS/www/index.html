@@ -1,0 +1,48 @@
+<!DOCTYPE html><!--로그인-->
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--EUC-KR-->
+<title>GDMS-사무장시스템</title>
+<link rel="stylesheet" href="./comm/jquery_m/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="./comm/css/comm.css">
+<script src="./comm/jquery/jquery.js"></script>
+<script src="./comm/jquery/js.cookie.js"></script>
+<script src="./comm/js/comm.js"></script>
+<script src="./comm/jquery_m/jquery.mobile-1.4.5.js"></script>
+</head>
+<body> 
+
+
+<section id="login" data-role="page">
+    <div style="overflow: hidden;"  data-role="header" data-position="fixed" data-fullscreen="false">
+    	<h1>미리내마을</h1>
+    </div>                   
+   <div style='width:100%; text-align:center; margin-top:10px;'>
+		<table class='tbl-format tbl-format-none' style="border:none; width:350px; display:inline-block;">
+				<colgroup>
+					<col /><!--75px-->
+					<col /><!--240px-->
+					<col />
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td style='width:10%'>아이디</th>
+						<td style='width:40%' colspan=3><input id='id' type="text" class="input-text-doc" value="test" ></td>
+					</tr>
+					<tr>
+						<td style='width:10%'>password</th>
+						<td style='width:40%' colspan=3><input id='pw' type="text" class="input-text-doc" value="123456" ></td>
+					</tr>
+					<tr>
+						<td style='width:100%' colspan=4><a class="ui-shadow ui-btn ui-corner-all ui-mini"  href='#' onclick='set.login()'>로그인</a></td><!-- href="./main.html" -->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+     <footer data-role="footer"  data-position="fixed" data-fullscreen="false"><h1>미리내마을</h1></footer>
+</section>
+
+</body>
+</html>

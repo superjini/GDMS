@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--EUC-KR-->
+<title>GDMS-사무장시스템</title>
+<link rel="stylesheet" href="../comm/jquery_m/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="../comm/css/comm.css">
+<script src="../comm/jquery/jquery.js"></script>
+<script src="../comm/jquery/js.cookie.js"></script>
+
+</head>
+<body>
+	
+	 
+<section id="page1" data-role="page">
+    <div data-add-back-btn="true" style="overflow: hidden;"  data-role="header" data-position="fixed" data-fullscreen="false">
+    	<h1>일일보고서</h1>
+    	<a class="ui-btn-right" href="#menuPanel" data-icon="gear" data-iconpos="notext">Options</a>
+    	 <div data-role="navbar">
+            <ul>
+                <li><a href="#listPanel">리스트</a></li>
+                <li><a href="#memberListPanel" class="ui-btn-active ui-state-persist">회원</a></li>
+                <li><a href="#historyPanel">변경이력</a></li>
+            </ul>
+        </div>
+    </div>                   
+    <div class="content" data-role="content">
+			<div class='content-page-wrap'>
+				<div class='print-page'>
+				<div class='print-page-content'>
+					<!-- <div id='formatTitle_<?php echo $data['tab']?>' class='format-title '><span>일일보고서</span></div> -->
+					<div id='approvalBox_' class='approval-box-wrap '></div>
+		
+					<div  class='option-wrap'>
+						<div class='option'>
+							<table class='tbl-format '>
+								<colgroup>
+									<col /><!--75px-->
+									<col /><!--240px-->
+									<col />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th style='width:15%'>일련번호</th><!--일련번호-->
+										<td style='width:35%'><p id='no'>R20160902-1</p></td>
+										<th style='width:15%'>작성일</th><!--작성일-->
+										<td style='width:35%'><p id='date'>2016 .09 .02</p></td>
+									</tr>
+									<tr>
+										<th style='width:15%'>소속</th><!--소속-->
+										<td style='width:35%'><p id='sosok'>미리내마을</p></td>
+										<th style='width:15%'>작성자</th><!--작성자-->
+										<td style='width:35%'><p id='name'>김영철</p></td>
+									</tr>
+									
+										<!-- class='event-menu-bubble' -->
+										<div class="btn-menu-bubble" style="width:50px;">
+										
+										</div>
+			
+								</tbody>
+							</table>
+						</div>
+						
+						
+						<div class='option'>
+							<table class='tbl-format '>
+								<colgroup>
+									<col /><!-- width='75px' -->
+									<col /> <!-- width='555px' -->
+								</colgroup>
+								<tbody>
+									<tr>
+										<th style='width:15%'>금일업무</th><!--금일업무 today_work-->
+										<td style='width:85%' height='600px'>
+											<textarea class='input-textarea-doc' id='content'>
+											 	쇼핑몰 고구마 3개 판매
+											 	고구마캐기 체험 20인 방문
+											</textarea>
+						
+										</td>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class='option'>
+							<table class='tbl-format'>
+								<colgroup>
+									<col />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th style='width:15%'>비고</th><!--금일업무 today_work-->
+										<td style='width:85%'  height='300px'>
+											<textarea class='input-textarea-doc'  id='content2'></textarea>
+										</td>
+								</tbody>
+							</table>
+						</div>
+				
+				
+					<div class='content-page-wrap-bottom'></div>
+				</div> <!-- @print-page-content -->
+				</div> <!-- @print-page -->
+			</div><!-- @content-page-wrap -->
+    </div>
+  
+
+
+     <footer data-role="footer"  data-position="fixed" data-fullscreen="false"><h1>미리내마을</h1></footer>
+	<div data-role="panel" id="menuPanel" data-position="right" data-display="overlay" data-theme="a">
+       <h3> 설정메뉴 </h3>
+       <ul data-role="listview">
+           <li data-icon="power">
+                 <a href='#' onclick='set.logout()'>로그아웃</a>
+           </li>
+           <li data-icon="action">
+                <a href="#member_set"data-role="popup">회원설정</a>
+           </li>
+           <li data-icon="action">
+                 <a href="#security_set" data-rel="dialog">보안설정</a>
+           </l>
+           <li data-icon="action">
+                 <a href="#system_set" data-rel="dialog">환경설정</a>
+           </li>
+           <li data-icon="action">
+                 <a href="#nation_set" data-rel="dialog">국가설정</a>
+           </li>
+        </ul>
+	</div>
+	
+<!--리스트-->
+	<div data-role="panel" id="listPanel" data-position="left"  data-display="overlay" data-theme="a">
+       <h3> 일일보고서 리스트 </h3>
+      
+       <div data-role="collapsibleset" data-inset="false">
+		            <!-- <div data-role="collapsible"> 아코디언 사용시-->
+				        <!-- <h3>가나다 List</h3> -->
+				        <ul data-role="listview" data-filter="true" >
+				            <!-- <li data-role="list-divider">일일보고서</li> -->
+				            	<li><a href="#" onclick='set.report_day("20160902")'>2016 .09 .02 사무장 김영철</a></li>
+					            <li><a href="#" onclick='set.report_day("20160901")'>2016 .09 .01 사무장 김영철</a></li>
+					            <li><a href="#" onclick='set.report_day("20160831")'>2016 .08 .31 사무장 김영철</a></li>
+					            <li><a href="#" onclick='set.report_day("20160830")'>2016 .08 .30 사무장 김영철</a></li>
+					            <li><a href="#" onclick='set.report_day("20160829")'>2016 .08 .29 사무장 김영철</a></li>
+				        </ul>
+				  	<!-- </div> -->
+			  </div>
+		 <div style='text-align:center;margin-top:20px;'>
+		 	<a href="#" id='listPanelClose' data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left ui-btn-inline">Close</a>
+		 </div>
+	</div>
+	<div data-role="panel" id="memberListPanel" data-position="right" data-display="overlay" data-theme="a">
+       <h3> 회원목록 </h3>
+       <div data-role="collapsibleset" data-inset="false">
+		            <!-- <div data-role="collapsible"> 아코디언 사용시-->
+				        <!-- <h3>가나다 List</h3> -->
+				        <ul data-role="listview" data-filter="true" >
+				        		<li data-icon="false">
+									 <a href="#">
+									 	<label>	
+										 	<input type='checkbox'>
+						                    <img src="../img/man2.PNG">
+						                    <div style='width:90px; display:inline-block;'>
+						                    	<div style='font-size:12px; '>위원장</div><div  style='font-size:17px;'>노재철</div>
+						                    </div>
+						                </label>
+				                	</a>
+								</li>
+					            <li  data-icon="false">
+									 <a href="#">
+									 	<label>	
+										 	<input type='checkbox'>
+						                    <img src="../img/man1.PNG">
+						                    <div style='width:90px; display:inline-block;'>
+						                    	<div style='font-size:12px; '>사무장</div><div  style='font-size:17px;'>김영철</div>
+						                    </div>
+						                </label>
+				                	</a>
+								</li>
+								<li  data-icon="false">
+									 <a href="#">
+									 	<label>	
+										 	<input type='checkbox'>
+						                    <img src="../img/woman4.PNG">
+						                    <div style='width:90px; display:inline-block;'>
+						                    	<div style='font-size:12px; '>평위원</div><div  style='font-size:17px;'>김정자</div>
+						                    </div>
+						                </label>
+				                	</a>
+								</li>
+					            <li  data-icon="false">
+									 <a href="#">
+									 	<label>	
+										 	<input type='checkbox'>
+						                    <img src="../img/woman5.PNG">
+						                    <div style='width:90px; display:inline-block;'>
+						                    	<div style='font-size:12px; '>평위원</div><div  style='font-size:17px;'>이태순</div>
+						                    </div>
+						                </label>
+				                	</a>
+								</li>
+								<li  data-icon="false">
+									 <a href="#">
+									 	<label>	
+										 	<input type='checkbox'>
+						                    <img src="../img/man3.PNG">
+						                    <div style='width:90px; display:inline-block;'>
+						                    	<div style='font-size:12px; '>평위원</div><div  style='font-size:17px;'>박진규</div>
+						                    </div>
+						                </label>
+				                	</a>
+								</li>
+				        </ul>
+				  	<!-- </div> -->
+			  </div>
+	</div>
+	
+	<div data-role="panel" id="historyPanel" data-position="right" data-display="overlay" data-theme="a">
+       <h3> 변경이력 </h3>
+       <div data-role="collapsibleset" data-inset="false">
+		            <!-- <div data-role="collapsible"> 아코디언 사용시-->
+				        <!-- <h3>가나다 List</h3> -->
+				        <ul data-role="listview" data-filter="true" >
+				            <li data-role="list-divider">일일보고서</li>
+					            <li><a href="#">가나다</a></li>
+					            <li><a href="#">라마바</a></li>
+					            <li><a href="#">아야어여</a>
+					            </li>
+					            <li><a href="#">오요우유</a></li>
+				             <li data-role="list-divider">월간보고서</li>
+					            <li>
+									            <a href="#">
+				                    <img src="http://api.jquerymobile.com/resources/listview/images/album-hc.jpg">
+				                    <h2>Broken Bells</h2>
+				                    <p>The framework will scale the image to 80 pixels square</p>
+				                </a>
+								
+								</li>
+					            <li><a href="#">라마바</a></li>
+					            <li><a href="#">아야어여</a>
+					            </li>
+					            <li><a href="#">오요우유</a></li>
+				        </ul>
+				  	<!-- </div> -->
+			  </div>
+	</div>
+	
+	
+	
+</section>
+</body>
+</html>
